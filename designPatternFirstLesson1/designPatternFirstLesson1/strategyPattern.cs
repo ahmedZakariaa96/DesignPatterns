@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace designPatternFirstLesson1
+﻿namespace designPatternFirstLesson1
 {
 
+
     //step 1:create interface
-    public interface Strategy <t>
+    public interface Strategy<t>
     {
         t doOpertation(t num1, t num2);
     }
@@ -22,7 +17,7 @@ namespace designPatternFirstLesson1
             return tnum1 + tnum2;
         }
     }
-    public class OperationSubstract<t>:Strategy<t>
+    public class OperationSubstract<t> : Strategy<t>
     {
         public t doOpertation(t num1, t num2)
         {
@@ -41,7 +36,7 @@ namespace designPatternFirstLesson1
         }
     }
     // step 3:Create Context Class.
-     public class ContextStartgeyPattern<t>
+    public class ContextStartgeyPattern<t>
     {
         private Strategy<t> stg;
         public ContextStartgeyPattern(Strategy<t> stg)
@@ -49,9 +44,9 @@ namespace designPatternFirstLesson1
             this.stg = stg;
         }
 
-        public t executeStrategy(t num1,t num2)
+        public t executeStrategy(t num1, t num2)
         {
-           return this.stg.doOpertation(num1, num2);
+            return this.stg.doOpertation(num1, num2);
         }
     }
 
